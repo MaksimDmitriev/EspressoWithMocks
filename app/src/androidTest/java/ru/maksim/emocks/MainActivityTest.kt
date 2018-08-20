@@ -9,11 +9,11 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
-    @Rule
-    var mActivityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
+    @Rule @JvmField
+    val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun verifyFoo() {
+    fun sampleTest() {
     }
 
 }
