@@ -13,15 +13,15 @@ class App : Application() {
         super.onCreate()
 
         Toothpick.setConfiguration(Configuration.forProduction().disableReflection())
-        MemberInjectorRegistryLocator.setRootRegistry(ru.maksim.emocks.MemberInjectorRegistry())
         FactoryRegistryLocator.setRootRegistry(ru.maksim.emocks.FactoryRegistry())
+        MemberInjectorRegistryLocator.setRootRegistry(ru.maksim.emocks.MemberInjectorRegistry())
 
         val appScope = Toothpick.openScope(this)
         initToothpick(appScope)
     }
 
     private fun initToothpick(appScope: Scope) {
-        appScope.installModules(SmoothieApplicationModule(this))
+        appScope.installModules(ApplicationModule(this))
     }
 }
 
