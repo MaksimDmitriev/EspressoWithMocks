@@ -1,6 +1,6 @@
 package ru.maksim.emocks
 
-interface DummyApi {
+interface SomeApi {
 
     fun getSomething(): String
 }

@@ -7,7 +7,7 @@ import toothpick.configuration.Configuration
 import toothpick.registries.FactoryRegistryLocator
 import toothpick.registries.MemberInjectorRegistryLocator
 
-class App : Application() {
+open class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -16,11 +16,11 @@ class App : Application() {
         FactoryRegistryLocator.setRootRegistry(ru.maksim.emocks.FactoryRegistry())
         MemberInjectorRegistryLocator.setRootRegistry(ru.maksim.emocks.MemberInjectorRegistry())
 
-        val appScope = Toothpick.openScope(this)
+        val appScope = Toothpick.openScope(DiScopes.APP)
         initToothpick(appScope)
     }
 
-    private fun initToothpick(appScope: Scope) {
+    protected open fun initToothpick(appScope: Scope) {
         appScope.installModules(ApplicationModule(this))
     }
 }

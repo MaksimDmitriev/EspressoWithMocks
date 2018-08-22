@@ -2,7 +2,7 @@ package ru.maksim.emocks
 
 import javax.inject.Inject
 
-class DummyApiImpl @Inject constructor() : DummyApi {
+class SomeApiImpl @Inject constructor() : SomeApi {
 
     override fun getSomething() = "Real response"
 }
